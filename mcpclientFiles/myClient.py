@@ -19,7 +19,6 @@ async def main():
 
     model = ChatGroq(model="deepseek-r1-distill-llama-70b")
 
-    # Pass *tools (not [tools]) if tools is a list
     agent = create_react_agent(
         model,
         tools,
@@ -31,6 +30,5 @@ async def main():
 
     print("Math response:", math_response["messages"][-1].content)
 
-# Entry point
 if __name__ == "__main__":
     asyncio.run(main())
